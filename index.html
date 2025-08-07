@@ -544,6 +544,19 @@
     * { box-sizing: border-box; }
 
     body {
+
+
+    margin: 0;
+      padding: 0;
+      background: #ffe6e6;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      user-select: none;
+      touch-action: manipulation;
       margin: 0;
       padding: 0;
       background: #ffe6e6;
@@ -643,11 +656,16 @@
   </style>
 </head>
 <body>
-<h1> Make a Wish</h1>
-  <div class="message">Double tap or shake to blow out the candles! 🎉</div><br>
-<br>
-<br>
-<br>
+
+
+
+  <div class="message">Double tap or shake to blow out the candles! 🎉</div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
   <div class="cake" id="cake">
     <div class="layer top" id="top-layer">
       <!-- Candles -->
@@ -662,7 +680,38 @@
     <div class="plate"></div>
   </div>
 
-  <script>
+</body>
+</html>
+
+
+
+        <h1>For You On Your Special Day</h1>
+        
+        <div class="message-section">
+            <h2>To Someone Very Special...</h2>
+            <p>As I look through these photos, each one brings back a flood of memories that I hold dear to my heart. Your smile, your laughter, the way your eyes light up when you're happy - these are moments I'll never forget, no matter how much time passes.</p>
+            
+            <p>I miss you more than words can express. I miss our conversations that would last for hours, the comfort of your presence, and the way you made even ordinary days feel magical. Though we're no longer together, the love I felt for you hasn't faded - it's simply transformed into a quiet wish for your happiness.</p>
+            
+            <p>On your birthday, I want you to know that you're an extraordinary person who deserves all the joy in the world. May this year bring you closer to your dreams, surround you with people who appreciate you, and fill your life with beautiful moments.</p>
+            
+            <p>Even if I'm no longer part of your life, please know that someone out here still thinks of you fondly, still remembers your birthday with warmth, and still wishes nothing but the best for you.</p>
+            
+            <p>Happy Birthday, Jemi . May your day be as wonderful as you are.</p>
+        </div><br>
+       
+        
+        <p class="birthday-wish">May all your dreams and wishes come true today and always...</p>
+        
+        <button class="back-btn" onclick="showPage('page1')">Back to Photos</button>
+    </div>
+    
+    <footer><br><br><br>    
+        Created with love for Jemi's birthday
+    </footer>
+  
+    
+    <script>
     let lastX, lastY, lastZ;
     const threshold = 15;
     let lastTap = 0;
@@ -700,40 +749,13 @@
       }
       lastTap = now;
     });
-  </script>
 
-</body>
-</html>
-
-
-
-        <h1>For You On Your Special Day</h1>
-        
-        <div class="message-section">
-            <h2>To Someone Very Special...</h2>
-            <p>As I look through these photos, each one brings back a flood of memories that I hold dear to my heart. Your smile, your laughter, the way your eyes light up when you're happy - these are moments I'll never forget, no matter how much time passes.</p>
-            
-            <p>I miss you more than words can express. I miss our conversations that would last for hours, the comfort of your presence, and the way you made even ordinary days feel magical. Though we're no longer together, the love I felt for you hasn't faded - it's simply transformed into a quiet wish for your happiness.</p>
-            
-            <p>On your birthday, I want you to know that you're an extraordinary person who deserves all the joy in the world. May this year bring you closer to your dreams, surround you with people who appreciate you, and fill your life with beautiful moments.</p>
-            
-            <p>Even if I'm no longer part of your life, please know that someone out here still thinks of you fondly, still remembers your birthday with warmth, and still wishes nothing but the best for you.</p>
-            
-            <p>Happy Birthday, Jemi . May your day be as wonderful as you are.</p>
-        </div><br>
-       
-        
-        <p class="birthday-wish">May all your dreams and wishes come true today and always...</p>
-        
-        <button class="back-btn" onclick="showPage('page1')">Back to Photos</button>
-    </div>
-    
-    <footer><br><br><br>    
-        Created with love for Jemi's birthday
-    </footer>
-  
-    
-    <script>
+    function blowOutCandles() {
+      const flames = document.querySelectorAll('.flame');
+      flames.forEach(f => f.style.display = 'none');
+      document.querySelector('.message').textContent = 'Candles blown out! 🎂';
+      blown = true;
+    }
         // Slideshow functionality
         let slideIndex = 1;
         showSlides(slideIndex);
